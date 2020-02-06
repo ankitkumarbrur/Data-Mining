@@ -28,7 +28,7 @@ def ruleset(dataset):
 
 dataset = pd.read_csv("people.csv")
 
-dataset["rule1"] = ""
+dataset["rule1"] = "" 
 dataset["rule2"] = ""
 dataset["rule3"] = ""
 dataset["rule4"] = ""

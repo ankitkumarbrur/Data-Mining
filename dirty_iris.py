@@ -58,7 +58,6 @@ def autolabel(rects):
 autolabel(rects1)
 autolabel(rects2)
 
-
 ax.set_ylabel('Observations')
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
@@ -77,5 +76,5 @@ plt.show()
 
 dataset = pd.read_csv("dirty_iris.csv")
 
-dataset.boxplot(column=["Petal.Length"])
+dataset.boxplot()
 plt.show()
