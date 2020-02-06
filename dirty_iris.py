@@ -5,14 +5,6 @@ import dirty_iris_rules as dir
 pd.set_option('display.max_rows',157)
 
 dataset = pd.read_csv("dirty_iris.csv")
-dataset = dataset.replace([np.inf, -np.inf], np.nan)
-dataset[dataset.iloc[:,:4]<0] = np.nan
-
-n = len(dataset)
-n1 = len(dataset.dropna())
-
-print('\nNumber of total observations:          {}\nNumber of complete observations:        {}'.format(n,n1))
-print('\nPercentage of complete observations:    {}%'.format(int((n1/n)*100)))
 
 a = dir.check_species(dataset)
 b = dir.check_validity(dataset)
@@ -56,9 +48,19 @@ ax.set_ylabel('Observations')
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
 ax.legend()
+
+dataset = dataset.replace([np.inf, -np.inf], np.nan)
+dataset[dataset.iloc[:,:4]<0] = np.nan
+
+n = len(dataset)
+n1 = len(dataset.dropna())
+
+print('\nNumber of total observations:          {}\nNumber of complete observations:        {}'.format(n,n1))
+print('\nPercentage of complete observations:    {}%'.format(int((n1/n)*100)))
+
 plt.show()
 
-ax.set_title('Basic Plot')
-ax.boxplot(dataset.iloc[:,0:4])
+# ax.set_title('Basic Plot')
+# ax.boxplot(dataset.iloc[:,0:4])
 
-plt.show()
+# plt.show()
