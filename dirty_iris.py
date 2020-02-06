@@ -60,7 +60,7 @@ print('\nPercentage of complete observations:    {}%'.format(int((n1/n)*100)))
 
 plt.show()
 
-# ax.set_title('Basic Plot')
-# ax.boxplot(dataset.iloc[:,0:4])
+dataset = pd.read_csv("dirty_iris.csv")
 
-# plt.show()
+dataset.boxplot(column=["Petal.Length"])
+plt.show()
