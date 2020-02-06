@@ -1,2 +1,1 @@
-
-plt.ylabel('Followed by')
+'Rule 1'
