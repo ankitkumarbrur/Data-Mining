@@ -44,6 +44,21 @@ fig, ax = plt.subplots()
 rects1 = ax.bar(x - width/2, X, width, label='Follow Rules')
 rects2 = ax.bar(x + width/2, Y, width, label='Don\'t Follow Rules')
 
+
+def autolabel(rects):
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+autolabel(rects1)
+autolabel(rects2)
+
+
 ax.set_ylabel('Observations')
 ax.set_xticks(x)
 ax.set_xticklabels(labels)
